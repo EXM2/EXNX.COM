@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>بوابة مشاهدة الفيديوهات</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+font-family:'Segoe UI',Tahoma;
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:#fff;
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+padding:20px;
+overflow-x:hidden;
+}
+
+.container{max-width:600px;width:100%}
+
+.box{
+background:rgba(15,32,39,.95);
+border-radius:24px;
+padding:35px 25px;
+text-align:center;
+box-shadow:0 8px 32px rgba(0,0,0,.4);
+border:2px solid rgba(0,255,204,.2);
+animation:fadeIn .8s ease-in-out;
+}
+
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(30px)}
+to{opacity:1;transform:translateY(0)}
+}
+
+h1{
+font-size:26px;
+margin-bottom:15px;
+background:linear-gradient(135deg,#00ffcc,#00d4ff);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+font-weight:bold;
+}
+
+.desc{
+font-size:15px;
+line-height:1.8;
+margin-bottom:20px;
+}
+
+.timer-container{
+margin:30px 0;
+padding:25px;
+border-radius:20px;
+border:2px solid rgba(0,255,204,.3);
+}
+
+.timer{
+font-size:64px;
+font-weight:bold;
+font-family:monospace;
+}
+
+.note{
+font-size:14px;
+color:#ffcc00;
+margin:20px 0;
+}
+
+.ad-section{
+margin:25px 0;
+padding:20px;
+border-radius:16px;
+border:1px dashed rgba(255,255,255,.2);
+min-height:90px;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+.ad-label{
+font-size:11px;
+opacity:.5;
+margin-bottom:5px;
+}
+
+.progress-bar{
+height:6px;
+background:rgba(255,255,255,.1);
+border-radius:10px;
+overflow:hidden;
+margin-top:20px;
+}
+
+.progress-fill{
+height:100%;
+background:linear-gradient(90deg,#00ffcc,#00d4ff);
+animation:progress 10s linear;
+}
+
+@keyframes progress{
+from{width:100%}
+to{width:0%}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="box">
+
+<h1>🎬 بوابة مشاهدة الفيديوهات</h1>
+
+<div class="desc">
+يرجى الانتظار حتى انتهاء العدّ التنازلي  
+سيتم تحويلك تلقائيًا
+</div>
+
+<!-- 🔝 الإعلان الأول -->
+<div class="ad-section ad-top">
+<div style="width:100%">
+<div class="ad-label">إعلان</div>
+<script>
+atOptions={
+'key':'8ec23ca56ae1da80ccf9e8eccb586647',
+'format':'iframe',
+'height':90,
+'width':728,
+'params':{}
+};
+</script>
+<script src="https://www.highperformanceformat.com/8ec23ca56ae1da80ccf9e8eccb586647/invoke.js"></script>
+</div>
+</div>
+
+<div class="note">🔥 لا تغلق الصفحة</div>
+
+<div class="timer-container">
+<div class="timer" id="countdown">10</div>
+<div class="progress-bar"><div class="progress-fill"></div></div>
+</div>
+
+<div class="desc">✨ سيتم التحويل بعد انتهاء العد</div>
+
+<!-- 🔽 الإعلان الثاني (مخفي بالبداية) -->
+<div class="ad-section ad-bottom" id="bottomAd" style="display:none">
+<div style="width:100%">
+<div class="ad-label">إعلان</div>
+<script src="https://pl28557264.effectivegatecpm.com/66/c7/7d/66c77d7ac95f5328a050e5b7c4929460.js"></script>
+</div>
+</div>
+
+</div>
+</div>
+
+<script>
+let timeLeft=10;
+let interacted=false;
+
+document.querySelector('.ad-top').addEventListener('mouseenter',()=>{
+interacted=true;
+});
+
+setTimeout(()=>{
+if(!interacted){
+document.getElementById('bottomAd').style.display='flex';
+}
+},3500);
+
+const countdown=document.getElementById("countdown");
+const timer=setInterval(()=>{
+timeLeft--;
+countdown.textContent=timeLeft;
+if(timeLeft<=0){
+clearInterval(timer);
+countdown.textContent="جاري التحويل...";
+setTimeout(()=>{
+window.location.href="https://t.me/+BhHIjcFmlwE4NzU8";
+},500);
+}
+},1000);
+
+window.addEventListener('beforeunload',function(e){
+if(timeLeft>0){
+e.preventDefault();
+e.returnValue='';
+}
+});
+</script>
+
+</body>
+</html>
